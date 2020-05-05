@@ -1,0 +1,10 @@
+<h1>SapphireDb angular editor demo</h1>
+
+<div class="row">
+  <div class="cell-md-12">
+    <m4-input [(ngModel)]="name" (ngModelChange)="name$.next($event)" prepend="Document"></m4-input>
+  </div>
+  <div class="cell-md-12" *ngIf="document$ | async; let document">
+    <m4-textarea cls-textarea="h-vh-50" [ngModel]="document.content" (ngModelChange)="updateDocument(document, $event)" prepend="Content"></m4-textarea>
+  </div>
+</div>
